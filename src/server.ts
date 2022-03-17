@@ -11,10 +11,6 @@ import multer from "multer";
 // Constants
 const app = express();
 const forms = multer();
-/***********************************************************************************
- *                                  Middlewares
- **********************************************************************************/
-
 // Common middlewares
 // app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -33,21 +29,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-/***********************************************************************************
- *                         API routes and error handling
- **********************************************************************************/
-
 // Add api router
 app.use(routers);
 
-// Error handling 
-// app.use((err: Error | CustomError, _: Request, res: Response, __: NextFunction) => {
-//     logger.err(err, true);
-//     const status = (err instanceof CustomError ? err.HttpStatus : StatusCodes.BAD_REQUEST);
-//     return res.status(status).json({
-//         error: err.message,
-//     });
-// });
+
 
 
 
